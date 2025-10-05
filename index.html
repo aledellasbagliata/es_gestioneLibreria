@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libreria</title>
-    <link rel="stylesheet" href="styleProva.css">
-    <script src="js/datiXml.js"></script>
-    <script src="js/jsProva.js"></script>
+    <title>Libreria - Il Tuo Prossimo Viaggio Inizia Qui</title>
+    <link rel="stylesheet" href="styleProva.css"> 
+    <script src="./js/datiXml.js"></script>
+    <script src="./js/jsProva.js"></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header class="navbar">
         <div class="logo">LIBRERIA</div>
-        <nav>
-            <a href="#vetrina">Vetrina</a>
-            <a href="#generi">Generi</a>
-            <a href="#autori">Autori</a>
-            <a href="#contatti">Contatti</a>
-        </nav>
-        <div class="user-actions">
-            <input type="text" placeholder="Cerca un libro...">
-            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
-            <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        
+        <button class="icon-btn menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button> 
+
+        <div class="nav-links">
+            <nav>
+                <a href="#vetrina">Vetrina</a>
+                <a href="#generi">Generi</a>
+                <a href="#autori">Autori</a>
+                <a href="#contatti">Contatti</a>
+            </nav>
+            <div class="user-actions">
+                <input type="text" placeholder="Cerca un libro...">
+                <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+            </div>
         </div>
     </header>
 
@@ -33,8 +40,7 @@
                 <p>Scopri migliaia di titoli selezionati. Dalla narrativa classica alle ultime uscite sci-fi.</p>
                 <a href="#vetrina" class="cta-button">Vedi la Vetrina</a>
             </div>
-            <div class="hero-image">
-                </div>
+            <div class="hero-image"></div>
         </section>
 
         <section id="vetrina" class="vetrina-section">
@@ -65,8 +71,9 @@
         </section>
         
         <section id="catalogo-completo" class="catalogo-completo">
-             </section>
-              <div class="center-btn-container">
+            </section>
+
+        <div class="center-btn-container">
             <button id="close-catalog-btn" class="cssbuttons-io-button" style="display: none;">
                 Chiudi Catalogo
                 <div class="icon">
@@ -80,11 +87,15 @@
     </main>
 
     <footer class="footer">
-        <div class="social-links">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; 2024 Libreria. Tutti i diritti riservati.
+            </div>
+            <div class="social-links">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
         </div>
     </footer>
-
 </body>
 </html>

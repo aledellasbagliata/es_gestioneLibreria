@@ -35,6 +35,7 @@ a:hover {
     color: #f0f0f0;
 }
 
+/* === 1. Navbar: Desktop/Default === */
 .navbar {
     background-color: var(--color-dark);
     padding: 15px 5%;
@@ -53,6 +54,18 @@ a:hover {
     font-weight: bold;
     color: var(--color-primary);
     letter-spacing: 0.1em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: space-between; 
+}
+
+.nav-links nav {
+    margin-left: 20px;
+    display: flex;
 }
 
 nav a {
@@ -86,10 +99,18 @@ nav a {
     margin-left: 10px;
 }
 
+.navbar .menu-toggle {
+    display: none; 
+    margin-left: 15px;
+    font-size: 1.5em; 
+}
+
+
 .icon-btn:hover {
     color: var(--color-primary);
 }
 
+/* === 2. Hero Section === */
 .hero-section {
     min-height: 60vh;
     padding: 80px 5%;
@@ -97,14 +118,16 @@ nav a {
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-dark);
+    gap: 40px; 
 }
 
-.hero-image{
+.hero-image {
     width: 40%;
     height: 350px;
     background-color: var(--color-background-light); 
     border-radius: 8px;
-    background-image: url('./img/hero-image.png'); 
+    /* Immagine Placeholder */
+    background-image: url('./img/hero-image.png');
     background-size: cover;
     background-position: center; 
 }
@@ -142,13 +165,7 @@ nav a {
     transform: translateY(-2px);
 }
 
-.hero-image {
-    width: 40%;
-    height: 350px;
-    background-color: var(--color-background-light); 
-    border-radius: 8px;
-}
-
+/* === 3. Vetrina Section === */
 .vetrina-section {
     padding: 60px 5%;
     background-color: var(--color-background-light);
@@ -191,13 +208,8 @@ nav a {
     background-color: var(--color-dark);
     margin-bottom: 15px;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 0.9em;
-    background-image: url("./img/copertina_libro.png");
+    /* Immagine Placeholder */
+    background-image: url('./img/copertina_libro.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -212,6 +224,7 @@ nav a {
     margin-bottom: 25px;
 }
 
+/* === Stili del pulsante CSSButtons === */
 .cssbuttons-io-button {
     margin: 0;
     background: #a370f0;
@@ -232,6 +245,7 @@ nav a {
     height: 2.8em;
     padding-right: 3.3em;
     cursor: pointer;
+    max-width: 100%; 
 }
 
 .cssbuttons-io-button .icon {
@@ -267,93 +281,120 @@ nav a {
     transform: scale(0.95);
 }
 
+
+/* === 4. Tabella: Stili e Gestione Responsive === */
 .catalogo-completo {
     padding: 20px 5%;
     background-color: var(--color-dark);
-    display: flex;
+    align-items: flex-start; 
     justify-content: center;
+}
+
+/* Wrapper essenziale per lo scroll orizzontale */
+.table-responsive-wrapper {
     width: 100%;
+    max-width: 1200px; 
+    overflow-x: auto; /* ABILITA LO SCROLL SU SCHERMI PICCOLI */
+    margin: 40px auto;
 }
 
 .book-table {
-    width: 90vh;
-    margin: 40px 0;
+    width: 100%; 
+    /* RIDOTTO: Larghezza minima per lo scroll orizzontale su mobile */
+    min-width: 550px; 
+    margin: 0; 
     background-color: var(--color-dark);
     color: var(--color-text);
     border-collapse: separate;
     border-spacing: 0 8px;
 }
 
-.book-table  th { 
+.book-table th { 
     height: auto;
     padding: 15px 10px;
     border: none;
     background-color: #a370f0; 
     color: #ffffff;
-    border-radius: 0; 
     border-bottom: 2px solid #714da6; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-align: center;
+    white-space: nowrap; 
 } 
 
-.book-table th:first-child {
-    border-top-left-radius: 8px;
-}
-.book-table th:last-child {
-    border-top-right-radius: 8px;
-}
+.book-table th:first-child { border-top-left-radius: 8px; }
+.book-table th:last-child { border-top-right-radius: 8px; }
 
-.book-table > tr { 
-    display: table-row;
-}
-
-.book-table > tr > td { 
+.book-table td { 
     text-align: center;
+    padding: 10px; 
     border: none;
-    border-radius: 0; 
     height: 40px;
     background-color: var(--color-table-cell);
     border-top: 1px solid var(--color-table-border);
     border-bottom: 1px solid var(--color-table-border);
     transition: background-color 0.3s ease;
+    /* Aggiunto: impedisce al testo nelle celle di forzare una larghezza eccessiva */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px; /* Limita la larghezza massima per cella */
 }
 
-.book-table > tr:last-child > td:first-child {
-    border-bottom-left-radius: 8px;
+.book-table td:first-child {
+    max-width: 150px; /* Titolo può essere leggermente più lungo */
 }
-.book-table > tr:last-child > td:last-child {
-    border-bottom-right-radius: 8px;
+.book-table td:nth-child(2),
+.book-table td:nth-child(3) {
+    max-width: 80px; /* Categorie e Cover più strette */
 }
 
-.book-table > tr:nth-child(even) > td {
+
+.book-table tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.book-table tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+.book-table tr:nth-child(even) td {
     background-color: var(--color-table-cell-alt);
 }
 
-.book-table > tr:hover > td {
+.book-table tr:hover td {
     background-color: var(--color-table-hover);
 }
 
 .center-btn-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centra orizzontalmente il pulsante */
+    justify-content: center;
     padding: 20px 0 60px 0;
 }
 
+/* === 5. Footer === */
 .footer {
     background-color: var(--color-dark);
     padding: 20px 5%;
-    text-align: center;
     border-top: 1px solid var(--color-background-light);
     color: var(--color-secondary-text);
+}
+
+.footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright {
+    flex-grow: 1;
+    text-align: left;
     font-size: 0.9em;
+}
+
+.social-links {
+    text-align: right;
 }
 
 .social-links i {
@@ -366,4 +407,163 @@ nav a {
 
 .social-links i:hover {
     color: var(--color-primary);
+}
+
+
+/* ########################################## */
+/* --- MEDIA QUERIES (RESPONSIVE) --- */
+/* ########################################## */
+
+/* ==================================== */
+/* 1. Schermi Piccoli (max 768px - Mobile) */
+/* ==================================== */
+@media screen and (max-width: 768px) {
+
+    /* --- Navbar Mobile --- */
+    .navbar {
+        padding: 10px 5%;
+        justify-content: space-between; 
+    }
+
+    .navbar .menu-toggle {
+        display: block; 
+        order: 1; 
+    }
+    
+    .logo {
+        order: 0; 
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        align-items: stretch; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: var(--color-dark);
+        border-top: 1px solid var(--color-background-light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        padding: 20px 5%;
+        text-align: center;
+    }
+    
+    .nav-links nav {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px dashed var(--color-background-light);
+    }
+    
+    .nav-links a:last-of-type {
+        border-bottom: none;
+    }
+
+    .user-actions {
+        flex-direction: row; 
+        justify-content: center;
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid var(--color-background-light);
+    }
+    
+    .user-actions .icon-btn {
+        margin: 0 10px;
+        display: block; 
+    }
+
+    .user-actions input[type="text"] {
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* --- Hero Section Mobile --- */
+    .hero-section {
+        flex-direction: column; 
+        text-align: center;
+        padding: 40px 5%;
+        min-height: auto;
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-image {
+        order: -1; 
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    /* --- Vetrina Section Mobile --- */
+    .vetrina-content {
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .featured-cover {
+        height: 150px;
+    }
+
+    /* --- Footer Mobile --- */
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .copyright, .social-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==================================== */
+/* 2. Schermi Medi (769px a 1024px - Tablet) */
+/* ==================================== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    nav a {
+        margin: 0 8px; 
+    }
+
+    .user-actions input[type="text"] {
+        width: 120px; 
+    }
+
+    .hero-section {
+        padding: 60px 3%;
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    
+    .hero-image {
+        height: 250px;
+    }
+
+    .vetrina-content {
+        gap: 20px;
+    }
 }
