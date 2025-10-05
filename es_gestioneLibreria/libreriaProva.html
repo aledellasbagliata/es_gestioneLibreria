@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Teca - Libreria Moderna</title>
+    <link rel="stylesheet" href="styleProva.css">
+    <script src="js/datiXml.js"></script>
+    <script src="js/jsProva.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">LIBRERIA</div>
+        <nav>
+            <a href="#vetrina">Vetrina</a>
+            <a href="#generi">Generi</a>
+            <a href="#autori">Autori</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+        <div class="user-actions">
+            <input type="text" placeholder="Cerca un libro...">
+            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+            <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Il Tuo Prossimo Viaggio Inizia Qui.</h1>
+                <p>Scopri migliaia di titoli selezionati. Dalla narrativa classica alle ultime uscite sci-fi.</p>
+                <a href="#vetrina" class="cta-button">Vedi la Vetrina</a>
+            </div>
+            <div class="hero-image">
+                </div>
+        </section>
+
+        <section id="vetrina" class="vetrina-section">
+            <h2>📚 Vetrina e Catalogo</h2>
+            <div class="vetrina-content">
+                
+                <div class="featured-item">
+                    <h3>Libro in Evidenza del Mese</h3>
+                    <div class="featured-cover"></div>
+                    <p class="featured-info">"Sussurri dal Vuoto" di G. Bianchi</p>
+                </div>
+
+                <div class="catalogo-callout">
+                    <h3>Vuoi visualizzare tutti i dati?</h3>
+                    <p>Accedi al catalogo completo e interattivo qui sotto.</p>
+                    
+                    <button class="cssbuttons-io-button">
+                        Visualizza Catalogo
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="catalogo-completo" class="catalogo-completo">
+             </section>
+              <div class="center-btn-container">
+            <button id="close-catalog-btn" class="cssbuttons-io-button" style="display: none;">
+                Chiudi Catalogo
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor" d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"></path>
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social-links">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </footer>
+
+</body>
+</html>
